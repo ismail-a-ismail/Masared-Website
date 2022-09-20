@@ -13,8 +13,9 @@ Index of the CSS File
 
 /* Start Global ---------------------------------------------- */
 :root {
-  --my-transition: 0.2s linear;
+  --transition: all 0.5s linear;
 }
+
 :focus {
   outline: none;
 }
@@ -37,6 +38,12 @@ ul {
 
 .container {
   padding: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-btn {
@@ -97,15 +104,6 @@ a:hover {
 /* End Global -------------------------------------------------- */
 
 /* Start Header ------------------------------------------------ */
-.header {
-  background-image: url("../img/الصورة\ الخلفية.png");
-  background-position: center center;
-  background-size: cover;
-  color: #fff;
-  position: relative;
-  padding-bottom: 15px;
-}
-
 .navbar-brand {
   width: 120px;
   height: 100px;
@@ -137,7 +135,7 @@ a:hover {
 .nav-icons li {
   display: inline-block;
   margin-right: 5px;
-  transition: var(--my-transition);
+  transition: var(--transition);
 }
 
 .nav-icons li i {
@@ -154,30 +152,37 @@ a:hover {
   color: #fff;
 }
 
-/* Content */
-.header-info {
-  margin: 140px 0;
+.hero {
+  height: calc(100vh - 100px);
+  background-image: url("../img/background-img.png");
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
 }
 
-.header-info .title {
+.hero-content {
+  margin-top: -30px;
+}
+
+.hero-content .title {
   font-size: 50px;
   font-weight: bold;
 }
 
-.header-info .desc {
+.hero-content .desc {
   font-size: 35px;
 }
 
-.header-info a {
+.hero-content a {
   background-color: #fff;
   padding: 5px 15px;
   color: #9b2167;
   font-size: 16px;
   line-height: 31px;
-  transition: var(--my-transition);
+  transition: var(--transition);
 }
 
-.header-info a:hover {
+.hero-content a:hover {
   background-color: #9b2167;
   color: #fff;
 }
@@ -195,12 +200,12 @@ a:hover {
     margin-right: -10px;
   }
 
-  .header-info .title {
+  .hero-content .title {
     font-size: 30px;
     font-weight: bold;
   }
 
-  .header-info .desc {
+  .hero-content .desc {
     font-size: 20px;
     padding: 0 10px;
   }
@@ -239,12 +244,10 @@ a:hover {
 
 .goal .goal-item .img {
   max-width: 267px;
-  max-height: 187px;
 }
 
 .goal .goal-item .img img {
   width: 100%;
-  height: 100%;
 }
 
 .goal .goal-item .desc {
@@ -296,13 +299,17 @@ a:hover {
   background-color: #fcf8f9;
 }
 
-.work .work-item {
-  max-width: 444px;
-  max-height: 478px;
+.work-item {
   margin: 0 auto;
+  cursor: pointer;
 }
 
-.work .work-item img {
+.work-item:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease-in;
+}
+
+.work-item img {
   width: 100%;
 }
 
@@ -436,8 +443,8 @@ img.hover-shadow {
   margin: 0 auto;
   padding: 10px 22px 0 22px;
   color: #fff;
-  margin-bottom: 30px;
-  transition: var(--my-transition);
+  margin: 30px 60px;
+  transition: var(--transition);
 }
 
 .service .service-item:hover {
@@ -494,7 +501,6 @@ img.hover-shadow {
     height: 160px;
     border-radius: 100px 100px 0 0;
     padding: 14px 14px 10px 14px;
-    margin: 0;
     margin-bottom: 25px;
   }
 
